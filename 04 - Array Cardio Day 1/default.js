@@ -34,8 +34,8 @@
   
       // Array.prototype.map()
       // 2. Give us an array of the inventors first and last names
-      const fullNames = inventors.map(inventors => `${inventors.first} ${inventors.last}`)
-      console.log(fullNames);
+      const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
+      console.table(fullNames);
   
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
@@ -85,16 +85,14 @@
         const [blast, bfirst] = nextOne.split(', ');
         return alast > blast ? 1 : -1;
       });
-      console.log(alpha);
+      console.table(alpha);
   
       // 8. Reduce Exercise
       // Sum up the instances of each of these
       const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
   
-      const transportation = data.reduce(function(obj,item){
-        if(!obj[item]){
-          obj[item] = 0;
-        }
+      const transportation = data.reduce((obj,item) => {
+        if(!obj[item]) obj[item] = 0;
         obj[item]++;
         return obj;
       },{});
