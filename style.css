@@ -10,6 +10,12 @@
     text-decoration: none;
 }
 
+.container > a:hover{
+    text-decoration: none;
+    transform: scale(1.05);
+    z-index: 2;
+} 
+
 .container > a > div.element{
     cursor: pointer;
     border-radius: 30px;
