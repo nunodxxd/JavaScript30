@@ -70,7 +70,7 @@ let mousedown = false;
 progress.addEventListener('click', scrub);
 //apenas se o mousedown é true ele executa o scrub
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousemove', () => mousedown = true);
-progress.addEventListener('mousemove', () => mousedown = false);
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
 
 fullscreen.addEventListener('click', enterFullscreen);
